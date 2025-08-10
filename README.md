@@ -2,8 +2,6 @@
 
 Compare tokenization strategies: byte-level vs BPE vs WordPiece vs Unigram.
 
-Part of the [LLM Experiments Portfolio](https://github.com/marcelo-earth/twenty-llms).
-
 ## What is this?
 
 Tokenizers turn text into numbers. There are 4 main ways to do it. This project loads each one and compares them side by side on the same text.
@@ -22,6 +20,22 @@ Tokenizers turn text into numbers. There are 4 main ways to do it. This project 
 ```bash
 pip install -r requirements.txt
 ```
+
+## What we test
+
+- Regular english and spanish text
+- Python code
+- Emojis and special characters
+- URLs
+- Rare/made-up words
+- Japanese, Arabic, mixed scripts
+
+## Key findings
+
+- **Byte-level BPE** (GPT-2/4) is the most robust. Never produces UNK tokens. Handles any language or input.
+- **WordPiece** (BERT) struggles with non-english and code. Small vocab means more splitting.
+- **Unigram** (T5) is surprisingly good at multilingual thanks to SentencePiece.
+- The industry converged on byte-level BPE for good reason: never bad at anything.
 
 ## Run
 
