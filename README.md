@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 - **Byte-level BPE** (GPT-2/4) is the most robust. Never produces UNK tokens. Handles any language or input.
 - **WordPiece** (BERT) struggles with non-english and code. Small vocab means more splitting.
-- **Unigram** (T5) is surprisingly good at multilingual thanks to SentencePiece.
+- **Unigram** (T5) looks great on Japanese, Arabic and emoji if you only call `tokenize()`, but those pieces are not in its vocab: `encode()` maps them to `<unk>`. T5's vocab covers English, French, German and Romanian, so it throws away most non-Latin text.
 - The industry converged on byte-level BPE for good reason: never bad at anything.
 
 ## Web version
