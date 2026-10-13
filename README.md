@@ -45,6 +45,21 @@ pip install -r requirements.txt
 python3 -m http.server 8000 --directory web
 ```
 
+## How the page works
+
+```mermaid
+flowchart LR
+    U["Text box or preset"] --> A["web/app.js"]
+    A --> T1["Xenova/gpt2<br/>byte-level BPE"]
+    A --> T2["pythia-70m<br/>BPE"]
+    A --> T3["bert-base-uncased<br/>WordPiece"]
+    A --> T4["t5-small<br/>Unigram"]
+    H["Hugging Face<br/>tokenizer.json"] -. loaded once in the browser .-> A
+    T1 & T2 & T3 & T4 --> R["Token chips, count,<br/>chars per token, unknown"]
+```
+
+Parity check: every preset tokenizes identically in the browser and in the Python notebook (8 presets x 4 tokenizers, 0 diffs on 2026-10-12).
+
 ## Run
 
 Open `byteme.ipynb` in Jupyter or run on [Kaggle](https://kaggle.com).
