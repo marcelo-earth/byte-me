@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ByteMe</title>
 <meta name="description" content="Type any text and see how byte-level BPE, BPE, WordPiece and Unigram split it into tokens, side by side.">
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,7 +26,7 @@
   <section id="grid" class="grid"></section>
 
   <footer>
-    <p>Tokenizers come from the original Hugging Face repos. A <span class="chip unk">red</span> token is an unknown token: information the tokenizer threw away. <code>·</code> marks a leading space.</p>
+    <p>Tokenizers load from Hugging Face (GPT-2 from the <code>Xenova/gpt2</code> mirror, which matches the original token for token). A <span class="chip unk">red</span> token is an unknown token: information the tokenizer threw away. <code>·</code> marks a leading space.</p>
     <p><a href="https://github.com/marcelo-earth/byte-me">Source and notebook</a></p>
   </footer>
 </main>
