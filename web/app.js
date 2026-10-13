@@ -25,7 +25,9 @@ const loaded = {};
 const clean = (t) => t.replace(/[Ġ▁]/g, "·").replace(/Ċ/g, "↵");
 
 function render(tok, text, unk) {
-  const tokens = text ? tok.tokenize(text) : [];
+  // Map through ids: tokenize() shows pieces that encode() later turns into the unknown token.
+  const ids = text ? tok.encode(text, { add_special_tokens: false }) : [];
+  const tokens = tok.model.convert_ids_to_tokens(ids);
   const unkCount = tokens.filter((t) => unk && t === unk).length;
   const chars = [...text].length;
   const ratio = tokens.length ? (chars / tokens.length).toFixed(2) : "0.00";
