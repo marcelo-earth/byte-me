@@ -37,6 +37,14 @@ pip install -r requirements.txt
 - **Unigram** (T5) is surprisingly good at multilingual thanks to SentencePiece.
 - The industry converged on byte-level BPE for good reason: never bad at anything.
 
+## Web version
+
+`web/` is a static page: type text and see the four tokenizers side by side with token count, chars per token and unknown tokens. Tokenization runs in the browser with Transformers.js, no backend.
+
+```bash
+python3 -m http.server 8000 --directory web
+```
+
 ## Run
 
 Open `byteme.ipynb` in Jupyter or run on [Kaggle](https://kaggle.com).
