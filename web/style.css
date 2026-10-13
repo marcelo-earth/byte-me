@@ -1,0 +1,38 @@
+:root {
+  --bg: #fafaf7; --fg: #1c1c1a; --muted: #6b6b66; --card: #fff; --line: #e4e3dc;
+  --unk: #f7c9c4; --unk-fg: #7a1d14;
+  --c0: #dbe9fe; --c1: #fde8c8; --c2: #d6f0dc; --c3: #ecdcf7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161614; --fg: #ecebe5; --muted: #9a9990; --card: #1f1f1c; --line: #34332e;
+    --unk: #6b2a24; --unk-fg: #ffd9d4;
+    --c0: #26405f; --c1: #5c4220; --c2: #254a30; --c3: #483458;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, sans-serif; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { margin: 0 0 4px; font-size: 2rem; }
+.lede { margin: 0 0 24px; color: var(--muted); }
+label { display: block; font-weight: 600; margin-bottom: 6px; }
+textarea { width: 100%; padding: 12px; font: inherit; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 8px; resize: vertical; }
+.presets { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.presets button { font: inherit; font-size: .85rem; padding: 4px 10px; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
+.presets button:hover { border-color: var(--muted); }
+.status { color: var(--muted); min-height: 1.5em; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+.card h2 { margin: 0; font-size: 1.1rem; }
+.card .sub { margin: 0 0 12px; font-size: .85rem; color: var(--muted); }
+.stats { display: flex; gap: 20px; margin-bottom: 12px; }
+.stats div { display: flex; flex-direction: column; }
+.stats b { font-size: 1.4rem; font-variant-numeric: tabular-nums; }
+.stats span { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.tokens { display: flex; flex-wrap: wrap; gap: 3px; font: 13px/1.4 ui-monospace, Menlo, monospace; }
+.chip { padding: 1px 4px; border-radius: 4px; white-space: pre; }
+.chip.c0 { background: var(--c0); } .chip.c1 { background: var(--c1); }
+.chip.c2 { background: var(--c2); } .chip.c3 { background: var(--c3); }
+.chip.unk { background: var(--unk); color: var(--unk-fg); }
+footer { margin-top: 32px; color: var(--muted); font-size: .9rem; }
+a { color: inherit; }
