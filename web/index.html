@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ByteMe</title>
+<meta name="description" content="Type any text and see how byte-level BPE, BPE, WordPiece and Unigram split it into tokens, side by side.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>ByteMe</h1>
+    <p class="lede">Type anything. See how four tokenizers cut it into pieces, side by side. Everything runs in your browser.</p>
+  </header>
+
+  <section class="input">
+    <label for="text">Text</label>
+    <textarea id="text" rows="4" spellcheck="false">Hello world! Hola, ¿cómo estás? 日本語のテキスト 🚀 https://example.com/ünïcode</textarea>
+    <div class="presets" id="presets"></div>
+  </section>
+
+  <p id="status" class="status">Loading tokenizers…</p>
+
+  <section id="grid" class="grid"></section>
+
+  <footer>
+    <p>Tokenizers come from the original Hugging Face repos. A <span class="chip unk">red</span> token is an unknown token: information the tokenizer threw away. <code>·</code> marks a leading space.</p>
+    <p><a href="https://github.com/marcelo-earth/byte-me">Source and notebook</a></p>
+  </footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
