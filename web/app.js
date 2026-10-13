@@ -1,7 +1,7 @@
 import { AutoTokenizer } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.5.1";
 
 const TOKENIZERS = [
-  { key: "byte_bpe", name: "Byte-level BPE", model: "gpt2", used: "GPT-2, GPT-4, Llama", unk: null },
+  { key: "byte_bpe", name: "Byte-level BPE", model: "Xenova/gpt2", used: "GPT-2, GPT-4, Llama", unk: null },
   { key: "bpe", name: "BPE", model: "EleutherAI/pythia-70m", used: "Pythia, GPT-NeoX", unk: null },
   { key: "wordpiece", name: "WordPiece", model: "bert-base-uncased", used: "BERT, DistilBERT", unk: "[UNK]" },
   { key: "unigram", name: "Unigram", model: "t5-small", used: "T5, XLNet, ALBERT", unk: "<unk>" },
